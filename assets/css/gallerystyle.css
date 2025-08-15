@@ -22,19 +22,20 @@ img, video {
     align-items: center;
 }
 
-.grid-wrapper > div > img, .video-gallery > div > video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 5px;
+.grid-wrapper > div > img, 
+.video-gallery > div > video {
+    width: auto; /* instead of 100% */
+    height: auto;
+    max-width: 100%;
+    object-fit: contain; /* instead of cover */
 }
 
 .grid-wrapper {
     display: grid;
     grid-gap: 10px;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-auto-rows: 200px;
     grid-auto-flow: dense;
+    /* removed grid-auto-rows */
 }
 
 .video-gallery {
